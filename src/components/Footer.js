@@ -29,9 +29,9 @@ const Footer = () => {
         </div>
 
         <div className="text-right w-full flex justify-end">
-          <div className="w-full md:max-w-[300px] py-4">
-            <div className="flex justify-center md:justify-end py- md:py-0 pb-4">
-              <ThemeToggle />
+          <div className="w-full md:max-w-[300px] py-3 md:py-0">
+            <div className="flex justify-center md:justify-end md:py-0 pb-4">
+              <ThemeToggle/>
             </div>
             <p className="text-center md:text-right">SignUp for Crypto News</p>
             <div className="py-4">
@@ -46,7 +46,7 @@ const Footer = () => {
                 </button>
               </form>
             </div>
-            <div className="flex justify-between text-accent">
+            <div className="flex justify-between text-accent mt-5">
               <AiOutlineInstagram />
               <FaFacebook />
               <FaTwitter />
@@ -56,7 +56,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <p className="text-center pt-7">Powered By Coin Gecko</p>
+      <p className="text-center font-bold pt-7">Powered By Coin Gecko</p>
     </div>
   );
 };

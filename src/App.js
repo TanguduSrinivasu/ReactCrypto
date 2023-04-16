@@ -8,6 +8,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import CoinPage from "./pages/CoinPage";
 import Footer from "./components/Footer";
+import Account from "./pages/Account";
 
 
 
@@ -16,8 +17,8 @@ function App() {
   const [coins, setCoins] = useState([]);
 
   const getCoinData = async() => {
-    //const response = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=10&page=1&sparkline=true&locale=en');
-    const response = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&sparkline=true&locale=en');
+    const response = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=30&page=1&sparkline=true&locale=en');
+    // const response = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&sparkline=true&locale=en');
     const data = await response.json();
     //console.log(data);
     setCoins(data);
@@ -35,6 +36,7 @@ function App() {
         <Route path='/' element={<Home coins={coins}/>}></Route>
         <Route path='/login' element={<Login/>}></Route>
         <Route path='/signup' element={<Signup/>}></Route>
+        <Route path='/account' element={<Account/>}></Route>
         <Route path='/coin/:coinId' element={<CoinPage/>}></Route>
       </Routes>
       <Footer/>

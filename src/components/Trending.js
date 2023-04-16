@@ -8,7 +8,7 @@ const Trending = () => {
       "https://api.coingecko.com/api/v3/search/trending"
     );
     const data = await response.json();
-    console.log(data?.coins);
+    //console.log(data?.coins);
     setTrending(data?.coins);
   };
 

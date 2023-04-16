@@ -77,7 +77,7 @@ const CoinPage = () => {
               </p>
             </div>
             <div>
-              <p className="text-gray-300 text-sm mr-[93px]">24h Low</p>
+              <p className="text-gray-300 text-sm mr-[49px]">24h Low</p>
               <p>
                 {" "}
                 ₹ {coin?.market_data?.low_24h?.inr.toLocaleString("en-IN")}
