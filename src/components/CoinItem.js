@@ -65,24 +65,24 @@ const CoinItem = ({ coin }) => {
   //console.log(coin)
 
   return (
-    <tr className="border-b h-[80px]">
+    <tr className="border-b h-[90px]">
        <td>
         {watchlistCoin ? <AiFillStar onClick={() => deleteCoin(coin.id)}/> : <AiOutlineStar onClick={saveCoin}/>}
       </td>
       <td>{coin.market_cap_rank}</td>
       <td>
         <Link to={`coin/${coin.id}`}>
-          <div className="flex items-center">
+          <div className="flex flex-col md:flex-row items-center">
             <img
               className="w-9 mr-3 rounded-full"
               src={coin.image}
               alt={coin.id}
             />
-            <p className="hidden lg:table-cell">{coin.name}</p>
+            <p className="lg:table-cell max-w-[100px] md:max-w-none">{coin.name}</p>
           </div>
         </Link>
       </td>
-      <td className="w-3">{coin.symbol.toUpperCase()}</td>
+      <td className="w-3 hidden md:table-cell">{coin.symbol.toUpperCase()}</td>
       <td>₹{coin.current_price.toLocaleString("en-IN")}</td>
       <td>
         {coin.price_change_percentage_24h > 0 ? (
