@@ -38,12 +38,12 @@ const CoinSearch = ({ coins }) => {
             {
               return filterData;
             }
-            else if(filterData.name.toLowerCase().includes(searchText.toLocaleLowerCase()))
+            else if(filterData.name.toLowerCase().includes(searchText.toLowerCase()))
             {
-              //console.log(filterData);
+              console.log(filterData);
               return filterData;
             }
-          }).map((coin) => (
+          }).slice(0,30).map((coin) => (
             <CoinItem key={coin.id} coin={coin} />
           ))}
         </tbody>

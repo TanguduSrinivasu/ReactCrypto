@@ -3,7 +3,7 @@ import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { Sparklines, SparklinesLine } from "react-sparklines";
 import { db } from "../firebase";
-import { arrayUnion, doc, updateDoc, deleteDoc, onSnapshot } from "firebase/firestore";
+import { arrayUnion, doc, updateDoc, onSnapshot } from "firebase/firestore";
 import { useSelector } from "react-redux";
 
 const CoinItem = ({ coin }) => {
@@ -17,7 +17,7 @@ const CoinItem = ({ coin }) => {
   useEffect(() => {
     onSnapshot(doc(db, 'users', `${user?.email}`), (doc) => {
         setSavedCoins(doc.data()?.watchList);
-        console.log(doc.data()?.watchList);
+        //console.log(doc.data()?.watchList);
     })
 }, [user?.email])
 

@@ -17,8 +17,8 @@ function App() {
   const [coins, setCoins] = useState([]);
 
   const getCoinData = async() => {
-    const response = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=30&page=1&sparkline=true&locale=en');
-    // const response = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&sparkline=true&locale=en');
+    // const response = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=30&page=1&sparkline=true&locale=en');
+    const response = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&sparkline=true&locale=en');
     const data = await response.json();
     //console.log(data);
     setCoins(data);
