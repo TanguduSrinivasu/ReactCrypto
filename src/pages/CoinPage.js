@@ -2,10 +2,13 @@ import React, { useEffect, useState } from "react";
 import { Sparklines, SparklinesLine } from "react-sparklines";
 import { FaTwitter, FaFacebook, FaReddit, FaGithub } from "react-icons/fa";
 import { useParams } from "react-router-dom";
+import { MetroSpinner } from "react-spinners-kit";
 
 const CoinPage = () => {
   const [coin, setCoin] = useState({});
   const params = useParams();
+
+  console.log(coin.length)
   console.log(params);
 
   const getCoinData = async () => {
@@ -23,7 +26,7 @@ const CoinPage = () => {
 
   return (
     <div className="rounded-div m-[6px]">
-      <div className="max-w-[1200px] mx-auto">
+    {Object.keys(coin).length > 0 ?  <div className="max-w-[1200px] mx-auto">
       <div className="flex py-8 justify-center">
         <img
           className="w-20 mr-8"
@@ -160,8 +163,8 @@ const CoinPage = () => {
         <p className="text-justify">{coin?.description?.en?.replace(/(<([^>]+)>)/gi, "")}</p>
         {/* removed the html tags in a paragraph */}
       </div>
-      </div>
-    </div>
+      </div> : <div className="flex items-center justify-center"><MetroSpinner/></div>}
+    </div> 
   );
 };
 

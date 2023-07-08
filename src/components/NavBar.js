@@ -61,8 +61,8 @@ const NavBar = () => {
       </div>
       {/* Mobile Menu List */}
       {/* <div className="md:hidden fixed left-0 top-[13.5%] flex flex-col items-center justify-between w-full h-[85.5%] bg-primary border border-secondary rounded-2xl shadow-2xl"> */}
-      <div className={sideMenu ? 'md:hidden fixed left-0 top-[13.5%] flex flex-col items-center justify-between w-full h-[85.5%] bg-primary duration-1000 z-10 border border-secondary rounded-2xl shadow-2xl'
-            : 'fixed left-[-100%] top-[13.5%] h-[85.5%] flex flex-col items-center justify-between bg-primary border border-secondary rounded-2xl shadow-2xl duration-1000 w-full z-10'
+      <div className={sideMenu ? 'md:hidden fixed left-0 top-[13.5%] flex flex-col items-center justify-between w-full h-[86.5%] bg-primary duration-1000 z-10 border border-secondary rounded-2xl shadow-2xl'
+            : 'fixed left-[-100%] top-[13.5%] h-[86.5%] flex flex-col items-center justify-between bg-primary border border-secondary rounded-2xl shadow-2xl duration-1000 w-full z-10'
     }>
         <ul className="w-full p-4 text-center">
           <li className="border-b py-6">

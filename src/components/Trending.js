@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { MetroSpinner } from "react-spinners-kit";
 
 const Trending = () => {
   const [trending, setTrending] = useState([]);
@@ -20,7 +21,7 @@ const Trending = () => {
     <div className="rounded-div m-[6px] text-primary">
       <h1 className="text-2xl font-bold mb-4">Trending Coins</h1>
       {/* grid cointainer */}
-      <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      {trending.length>0 ? <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {trending.map((trendCoin, index) => (
           <div key={index} className="rounded-div m-[6px] flex justify-between p- hover:scale-105 duration-300">
             <div className="flex w-full gap-4">
@@ -40,7 +41,7 @@ const Trending = () => {
             </div>
           </div>
         ))}
-      </div>
+      </div> : <div className="flex items-center justify-center"><MetroSpinner/></div>}
     </div>
   );
 };

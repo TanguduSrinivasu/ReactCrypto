@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import CoinItem from "./CoinItem";
+import { MetroSpinner } from "react-spinners-kit";
 
 const CoinSearch = ({ coins }) => {
   const [searchText, setSearchText] = useState("");
@@ -18,7 +19,7 @@ const CoinSearch = ({ coins }) => {
         </form>
       </div>
 
-      <table className="w-full border-collapse text-center">
+     {coins.length>0 ? <table className="w-full border-collapse text-center">
         <thead className="border-b h-14">
           <tr>
           <th></th>
@@ -47,7 +48,7 @@ const CoinSearch = ({ coins }) => {
             <CoinItem key={coin.id} coin={coin} />
           ))}
         </tbody>
-      </table>
+      </table> : <div className="flex items-center justify-center"><MetroSpinner/></div>}
     </div>
   );
 };
